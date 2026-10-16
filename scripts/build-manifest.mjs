@@ -28,11 +28,16 @@ const OUTPUT_FILE = join(MAPS_DIR, 'index.json');
  * @returns {string}
  */
 function extractTitle(content, fallback) {
-  // Strip frontmatter if present
+  // Check frontmatter title if present
   let cleanContent = content;
   if (content.startsWith('---')) {
     const endMatch = content.indexOf('\n---', 3);
     if (endMatch !== -1) {
+      const frontmatterBlock = content.slice(3, endMatch);
+      const titleMatch = frontmatterBlock.match(/^\s*title:\s*["']?(.+?)["']?\s*$/m);
+      if (titleMatch && titleMatch[1]) {
+        return titleMatch[1].trim();
+      }
       cleanContent = content.slice(endMatch + 4);
     }
   }

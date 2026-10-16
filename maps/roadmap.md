@@ -1,61 +1,41 @@
 ---
+title: Javascript Developer Roadmap
 markmap:
   colorFreezeLevel: 2
-  initialExpandLevel: 2
 ---
 
-# Road Map
+# Front End
+  ## Web Basics
+  ### [x] [HTML](https://youtu.be/G3e-cpL7ofc?si=t-MhHVqtSJQukABs)
+  ### [x] [CSS](https://youtu.be/G3e-cpL7ofc?si=t-MhHVqtSJQukABs)
+  ### [ ] [Javascript](https://youtu.be/EerdGm-ehJQ?si=vAoe9FRnPlkYgJZF)
 
-## Phase 1: Foundation & Core Setup
-- Project Initialization
-  - Git repository & GitHub Pages integration
-  - Automated CI/CD workflow with GitHub Actions
-- Architecture & Stack
-  - Plain HTML5, CSS3, ES2022 modules
-  - Markmap & D3.js visualization engine
-  - Zero-bundle static build pipeline
-- Manifest System
-  - Recursive folder indexing (`scripts/build-manifest.mjs`)
-  - Dynamic `maps/index.json` generation
-  - Title extraction from Markdown headings
+  ## Framework
+  ### [ ] [React](https://www.youtube.com/watch?v=TtPXvEcE11E)
+  ### [ ] [Next.js](https://www.infinitecourses.org/course/udemy-nextjs-and-react-the-complete-guide)
+  ### [ ] [Vite](https://www.youtube.com/watch?v=89NJdbYTgJ8&pp=ygURdml0ZSBjcmFzaCBjb3Vyc2XSBwkJRwwBhyohjO8%3D)
 
-## Phase 2: Navigation & User Experience
-- Interactive Sidebar
-  - Collapsible nested directory tree
-  - Keyboard navigation (Arrow keys + Enter)
-  - Real-time search & instant filtering
-- Deep Linking & State
-  - URL hash routing (`#roadmap.md`)
-  - Browser back & forward navigation history
-  - Persistent state in `localStorage`
-- Adaptive Theming
-  - System preference detection (`prefers-color-scheme`)
-  - Smooth Dark & Light mode toggle
-  - High-contrast color scales for readable node branches
+  ## Libraries
+  ### [ ] [TanStack]()
+  ### [ ] [Zustand]()
+  ### [ ] [Zod]()
 
-## Phase 3: Advanced Visual Controls
-- Mind Map Interaction
-  - Smooth pan, drag, and pinch-to-zoom
-  - Node expansion & folding controls
-  - One-click Expand All / Collapse All
-- Export & Sharing
-  - Standalone SVG vector export with embedded styles
-  - Read-only Markdown source inspector
-  - Quick copy-to-clipboard functionality
-- Internationalization (i18n)
-  - Automatic RTL (Right-to-Left) language detection
-  - Dedicated font stack for Arabic & Hebrew scripts
+# Back End
+  ## Language
+  ### [ ] [Javascript](https://youtu.be/EerdGm-ehJQ?si=vAoe9FRnPlkYgJZF)
+  ### [ ] [TypeScript](https://www.infinitecourses.org/course/udemy-mastering-typescript)
 
-## Phase 4: Future Enhancements
-- Content & Capabilities
-  - Full-text search across all map contents
-  - Rich LaTeX / KaTeX math formulas support
-  - Syntax highlighted code blocks inside nodes
-- Visual Customization
-  - Customizable color palettes (Pastel, Vibrant, Monochromatic)
-  - Layout orientation options (Horizontal, Vertical, Radial)
-  - Custom node icons and tag badges
-- Performance & Offline
-  - Progressive Web App (PWA) with service worker
-  - Offline caching of map assets
-  - Direct PDF and PNG high-res exports
+  ## Database
+  ### [ ] [PostgreSQL]()
+  ### [ ] [MongoDB]()
+  ### [ ] [Redis]()
+
+  ## API
+  ### [ ] [REST]()
+  ### [ ] [GraphQL]()
+
+  ## Tools & Practices
+  ### [ ] [NodeJs]()
+  ### [ ] [Git]()
+  ### [ ] [Docker]()
+  ### [ ] [Vitest]()
