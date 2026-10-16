@@ -1,41 +1,45 @@
 ---
-title: Javascript Developer Roadmap
+title: markmap
 markmap:
   colorFreezeLevel: 2
 ---
 
-# Front End
-  ## Web Basics
-  ### [x] [HTML](https://youtu.be/G3e-cpL7ofc?si=t-MhHVqtSJQukABs)
-  ### [x] [CSS](https://youtu.be/G3e-cpL7ofc?si=t-MhHVqtSJQukABs)
-  ### [ ] [Javascript](https://youtu.be/EerdGm-ehJQ?si=vAoe9FRnPlkYgJZF)
+## Links
 
-  ## Framework
-  ### [ ] [React](https://www.youtube.com/watch?v=TtPXvEcE11E)
-  ### [ ] [Next.js](https://www.infinitecourses.org/course/udemy-nextjs-and-react-the-complete-guide)
-  ### [ ] [Vite](https://www.youtube.com/watch?v=89NJdbYTgJ8&pp=ygURdml0ZSBjcmFzaCBjb3Vyc2XSBwkJRwwBhyohjO8%3D)
+- [Website](https://markmap.js.org/)
+- [GitHub](https://github.com/gera2ld/markmap)
 
-  ## Libraries
-  ### [ ] [TanStack]()
-  ### [ ] [Zustand]()
-  ### [ ] [Zod]()
+## Related Projects
 
-# Back End
-  ## Language
-  ### [ ] [Javascript](https://youtu.be/EerdGm-ehJQ?si=vAoe9FRnPlkYgJZF)
-  ### [ ] [TypeScript](https://www.infinitecourses.org/course/udemy-mastering-typescript)
+- [coc-markmap](https://github.com/gera2ld/coc-markmap) for Neovim
+- [markmap-vscode](https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode) for VSCode
+- [eaf-markmap](https://github.com/emacs-eaf/eaf-markmap) for Emacs
 
-  ## Database
-  ### [ ] [PostgreSQL]()
-  ### [ ] [MongoDB]()
-  ### [ ] [Redis]()
+## Features
 
-  ## API
-  ### [ ] [REST]()
-  ### [ ] [GraphQL]()
+Note that if blocks and lists appear at the same level, the lists will be ignored.
 
-  ## Tools & Practices
-  ### [ ] [NodeJs]()
-  ### [ ] [Git]()
-  ### [ ] [Docker]()
-  ### [ ] [Vitest]()
+### Lists
+
+- **strong** ~~del~~ *italic* ==highlight==
+- `inline code`
+- [x] checkbox
+- Katex: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$ <!-- markmap: fold -->
+  - [More Katex Examples](#?d=gist:af76a4c245b302206b16aec503dbe07b:katex.md)
+- Now we can wrap very very very very long text with the `maxWidth` option
+- Ordered list
+  1. item 1
+  2. item 2
+
+### Blocks
+
+```js
+console.log('hello, JavaScript')
+```
+
+| Products | Price |
+|-|-|
+| Apple | 4 |
+| Banana | 2 |
+
+![](https://markmap.js.org/favicon.png)

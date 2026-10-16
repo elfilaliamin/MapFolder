@@ -35,6 +35,9 @@ jobs:
       - name: Build maps manifest
         run: node scripts/build-manifest.mjs
 
+      - name: Ensure .nojekyll exists
+        run: touch .nojekyll
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 

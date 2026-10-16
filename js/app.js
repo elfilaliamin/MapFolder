@@ -168,6 +168,21 @@ function flattenTree(items) {
 }
 
 /**
+ * Safely resolve URLs relative to the application base folder,
+ * preventing 404s when GitHub Pages is visited without a trailing slash (e.g. /MapFolder vs /MapFolder/).
+ */
+function resolveAppUrl(relPath) {
+  const loc = window.location;
+  let basePath = loc.pathname;
+  if (!basePath.endsWith('/') && !basePath.endsWith('.html')) {
+    basePath = basePath + '/';
+  } else if (basePath.endsWith('.html')) {
+    basePath = basePath.substring(0, basePath.lastIndexOf('/') + 1);
+  }
+  return new URL(relPath, `${loc.origin}${basePath}`).href;
+}
+
+/**
  * Fetch maps/index.json
  */
 async function loadManifest() {
@@ -176,8 +191,8 @@ async function loadManifest() {
   hideEmptyState();
 
   try {
-    // Relative URL for GitHub Pages subpath compatibility
-    const response = await fetch('maps/index.json', { cache: 'no-cache' });
+    const url = resolveAppUrl('maps/index.json');
+    const response = await fetch(url, { cache: 'no-cache' });
     if (!response.ok) {
       throw new Error(`Failed to load maps manifest (${response.status} ${response.statusText})`);
     }
@@ -522,8 +537,7 @@ async function loadMapByPath(filePath) {
   hideError();
 
   try {
-    // Relative URL for GitHub Pages subpath compatibility
-    const url = `maps/${encodeURI(filePath)}`;
+    const url = resolveAppUrl(`maps/${encodeURI(filePath)}`);
     const response = await fetch(url, { cache: 'no-cache' });
     if (!response.ok) {
       throw new Error(`Failed to load ${filePath} (${response.status} ${response.statusText})`);
@@ -547,13 +561,18 @@ async function loadMapByPath(filePath) {
     state.isAllExpanded = false;
     updateExpandButtonText(false);
 
+    // Update active map title from frontmatter title if available
+    const resolvedTitle = (frontmatter && frontmatter.title) || fileTitle;
+    state.activeMapTitle = resolvedTitle;
+    DOM.mapTitleHeading.textContent = resolvedTitle;
+
     // Load any required external assets (KaTeX, Prism, etc.)
     const { styles, scripts } = state.transformer.getUsedAssets(features);
     if (styles && window.markmap.loadCSS) {
-      window.markmap.loadCSS(styles);
+      await window.markmap.loadCSS(styles);
     }
     if (scripts && window.markmap.loadJS) {
-      window.markmap.loadJS(scripts, { getMarkmap: () => window.markmap });
+      await window.markmap.loadJS(scripts, { getMarkmap: () => window.markmap });
     }
 
     // Frontmatter options handled by markmap.deriveOptions
