@@ -1,27 +1,8 @@
 [
   {
-    "type": "folder",
-    "name": "projects",
-    "path": "projects",
-    "children": [
-      {
-        "type": "file",
-        "name": "example.md",
-        "path": "projects/example.md",
-        "title": "Project Architecture & Roadmap"
-      }
-    ]
-  },
-  {
     "type": "file",
-    "name": "getting-started.md",
-    "path": "getting-started.md",
-    "title": "MapFolder Mindmap"
-  },
-  {
-    "type": "file",
-    "name": "arabic-demo.md",
-    "path": "arabic-demo.md",
-    "title": "خريطة المفاهيم: الذكاء الاصطناعي"
+    "name": "roadmap.md",
+    "path": "roadmap.md",
+    "title": "Road Map"
   }
 ]
